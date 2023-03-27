@@ -51,6 +51,22 @@
 
       }
 
+      .shadow {
+         text-shadow: 5px 4px 2px gray;
+      }
+
+      .shadow2 {
+         text-shadow: -15px 10px 4px rgba(13, 13, 196, 0.753);
+      }
+
+      .shadow3 {
+         text-shadow: 0px 0px 3px blue;
+      }
+
+      .shadow4:hover {
+         transition: 700ms 100ms;
+         text-shadow: -6px 6px 10px whitesmoke;
+      }
    </style>
 </head>
 <body>
@@ -61,7 +77,7 @@
    </header>
 
    <main>
-      <h1>
+      <h1 class="shadow4">
          Расчет (формула)
       </h1>
 
@@ -118,6 +134,12 @@
       <div class="formula">
          Чистые активы = стр.1300 - ЗУ + ДБП
       </div>
+
+      <div class="shadow">Тень</div>
+
+      <div class="shadow2">Синяя тень слева снизу</div>
+
+      <div class="shadow3">Синее размытие</div>
 
    </main>
 
