@@ -12,6 +12,16 @@ header {
    padding: 20px; font-size: 16pt;
 }
 
+.xd:hover {
+   background: black;
+}
+
+.xd:active {
+   font-size: 25px;
+   font-weight: bold;
+   color: white;
+}
+
 footer {
    padding: 25px;
    text-align: right;
@@ -21,9 +31,7 @@ footer {
    font-style: italic;
 }
 
-.bold:hover {
-   font-weight: bold;
-}
+
 
 li {
    padding-bottom: 10px;
