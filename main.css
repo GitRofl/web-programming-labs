@@ -20,25 +20,33 @@ footer {
    text-align: right;
    font-style: italic;
 }
-a {
-   color: aliceblue;
-   text-decoration: none;
-}
 
 .bold:hover {
    font-weight: bold;
 }
 
+li {
+   padding-bottom: 10px;
+}
 
+a {
+   color: aliceblue;
+   text-decoration: none;
+   transition:800ms 200ms;
+}
 
 a:visited {
    color: rgba(0, 255, 255, 0.281);
 }
 
 a:hover {
-   color: rgb(45, 175, 40);
-   background-color: whitesmoke;
+   
+   color: rgb(70, 214, 65);
+   background-color: #68eeee2c;
    text-decoration: underline;
+   text-shadow: -8px 6px 3px rgba(70, 214, 65, 0.589);
+   border-radius: 10%;
+   transition: 300ms;
 }
 
 a:active {
