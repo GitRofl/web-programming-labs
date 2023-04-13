@@ -16,6 +16,20 @@
          height: 250px;
          overflow-y: auto;
          overflow-x: hidden;
+         position: relative;
+         background: linear-gradient(rgba(152, 30, 156, 0.397), rgba(141, 141, 129, 0.418));
+         z-index: 2;
+      }
+
+      .second {
+         left: 300px;
+         top: 50px;
+         z-index: 1;
+         position: fixed;
+      }
+
+      .second:hover {
+         z-index: 3;
       }
 
    </style>
@@ -38,7 +52,7 @@
          ни даже за 100 тысяч.
       </div>
 
-      <div>
+      <div class="second">
          А всё потому, что за пару лет до этого в банках скопилось настолько много денег,
          то они вообще перестали проверять надёжность заёмщиков – а зачем? Недвига-то всё время дорожает!
          Не заплатит – быстренько загоним по круглой цене.
