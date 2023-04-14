@@ -23,7 +23,6 @@ header {
 }
 
 footer {
-   background: linear-gradient(rgb(44, 42, 42), black)
    padding: 25px;
    text-align: right;
    font-style: italic;
