@@ -6,13 +6,40 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Artem Basman. Lab 5</title>
    <link rel="stylesheet" href="main.css">
+   <script>
+      function showSum() {
+         let a = 5154;
+         let b = 7891;
+         let result = a + b;
+         alert ("Сумма " + a + " и " + b + " равна " + result)
+      }
+   </script>
+   <style>
+      .message {
+         cursor: pointer;
+         border: 0.2px solid rgb(187, 187, 187);
+         width: 400px;
+         height: 25px;
+         background: linear-gradient(to top, rgb(82, 42, 42), rgb(59, 158, 120) );
+         display: inline-block;
+         text-align: center;
+      }
+   </style>
 </head>
 <body>
    <header class="xd">
       НГТУ, ФБ, Лабораторная работа
         <hr>
     </header>
-    <main>  
+    <main>
+
+      <div class="message" onclick="showSum(g)">
+         Сколько будет 5154+7891?
+      </div>
+
+      <div class="message">
+         Узнать, кто автор страницы
+      </div>
 
     </main>
 
