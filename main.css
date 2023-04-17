@@ -5,6 +5,10 @@ body {
     margin: 0px;
 }
 
+main {
+   margin: 10px 20px;
+}
+
 header {
    background: linear-gradient(rgb(44, 42, 42), black);
    background-color: rgb(44, 42, 42);
