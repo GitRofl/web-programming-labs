@@ -33,6 +33,10 @@ footer {
    padding: 25px;
    text-align: right;
    font-style: italic;
+   position: fixed;
+   bottom: 0px;
+   left: 0;
+   right: 0;
 }
 
 
