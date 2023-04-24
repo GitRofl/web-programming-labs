@@ -58,6 +58,22 @@
          output.style.border = borderBut
       }
 
+      function shopping() {
+         let a = document.getElementById("CT");  
+         let b = document.getElementById("CK");
+         let c = document.getElementById("CH");
+         let d = document.getElementById("CS");
+         let i = document.getElementById("CSS");
+         let output = document.getElementById('cen');
+         let a1 = parseInt(a.value);
+         let b1 = parseInt(b.value);
+         let c1 = parseInt(c.value);
+         let d1 = parseInt(d.value);
+         let i1 = parseInt(i.value);
+         let result = (a1*700000)+(b1*200000)+(c1*7438)+(d1*653)+(i1*150000);
+         output.innerHTML = "Общая цена:  " + result + ' тенге';
+      }
+
    </script>
    
    <style>
@@ -75,6 +91,21 @@
          border: 2px solid;
          width: 300px;
          height: 40px;
+      }
+
+      .shop {
+         border: 1px solid white;
+         border-radius: 10px;
+         display: inline-block;
+         position: absolute;
+         width: 300px;
+         top: 35%;
+         left: 40%;
+         padding: 3%;
+         text-align: center;
+         padding-top: 25px;
+         padding-bottom: 25px;
+         background: linear-gradient(black, rgba(255, 255, 255, 0.548));
       }
 
    </style>
@@ -117,6 +148,40 @@
       </div>
 
       <div id="output"></div>
+
+      <div class="shop">
+
+         <div style="font-weight: 700; font-size: 25px;"> Корзина товаров </div> <br>
+
+         <div style="height: 40px;"></div>
+
+         <label>Телефон (700 000 тг/шт): <br> <input id="CT" type="number" value="1"></label><br>
+
+         <div style="height: 30px;"></div>
+
+         <label>Кровать (200 000 тг/шт): <br> <input id="CK" type="number" value="0"></label><br>
+
+         <div style="height: 30px;"></div>
+
+         <label>Шампунь (7 438 тг/шт): <br> <input id="CH" type="number" value="0"></label><br>
+
+         <div style="height: 30px;"></div>
+
+         <label>Сок (653 тг/шт): <br> <input id="CS" type="number" value="0"></label><br>
+
+         <div style="height: 30px;"></div>
+
+         <label>Собака (150 000 тг/шт): <br> <input id="CSS" type="number" value="1"></label><br>
+
+         <div style="height: 22px;"></div>
+
+         <input type="button" value="Рассчитать" onclick="shopping()">
+
+         <div style="height: 10px;"></div>
+
+         <div id="cen" style="color: rgb(19, 59, 39); font-weight: 600;"></div>
+
+      </div>
 
     </main>
 
