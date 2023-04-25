@@ -74,6 +74,42 @@
          output.innerHTML = "Общая цена:  " + result + ' тенге';
       }
 
+   function read() {
+   
+      const colors = ['red', 'green', 'blue', 'black', 'orange', 'pink', 'purple', 'brown', 'teal', 'gray', 'darkblue', 'aquamarine', 'limegreen'];
+
+      function createCircle(number) {
+         const circle = document.createElement('div');
+         circle.classList.add('circle');
+         circle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+         circle.textContent = number;
+         circle.addEventListener('click', () => {
+         circle.style.visibility = 'hidden';
+         });
+         return circle;
+      }
+
+      const container = document.getElementById('container');
+      const create = document.getElementById('create');
+      const numCirclesInput = document.getElementById('numCircles');
+
+      create.addEventListener('click', () => {
+
+      const numCircles = parseInt(numCirclesInput.value);
+
+      if (numCircles >= 1) {
+      container.innerHTML = '';
+      for (let i = 1; i <= numCircles; i++) {
+      const circle = createCircle(i);
+      container.appendChild(circle);
+      }
+
+      } else {
+      alert('Пожалуйста, введите число больше 0.');
+      }
+      });
+   }
+
    </script>
    
    <style>
@@ -97,16 +133,41 @@
          border: 1px solid white;
          border-radius: 10px;
          display: inline-block;
-         position: absolute;
          width: 300px;
-         top: 35%;
-         left: 40%;
+         margin: 3%;
          padding: 3%;
          text-align: center;
          padding-top: 25px;
          padding-bottom: 25px;
          background: linear-gradient(black, rgba(255, 255, 255, 0.548));
       }
+
+      .circle {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 50px;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+      position: relative;
+   }
+
+   #container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+   }
+
+   .circle:hover {
+      opacity: 0.8;
+   }
+
+   .button {
+      margin-top: 10px;
+      margin-bottom: 70px;
+   }
 
    </style>
 </head>
@@ -182,6 +243,18 @@
          <div id="cen" style="color: rgb(19, 59, 39); font-weight: 600;"></div>
 
       </div>
+
+      <div class="button">
+
+         <label for="numCircles">Введите количество кругов:</label>
+   
+         <input type="number" id="numCircles" min="1" value="30">
+   
+         <button id="create" onclick="read()">Создать круги</button>
+   
+      </div>
+   
+      <div id="container"></div>
 
     </main>
 
