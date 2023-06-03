@@ -52,6 +52,29 @@
          cursor: pointer;
          user-select: none; 
       }
+
+      .filter {
+         position: absolute;
+         top: 420px;
+         left: 300px;
+         border: 1px solid greenyellow;
+         width: 500px;
+         font-size: 13px;
+         margin-top: 20px;
+         padding: 10px;
+         border-radius: 10px;
+         text-align: center;
+         user-select: none;
+      }
+
+      .filter select {
+         cursor: pointer;
+      }
+
+      .filter button {
+         cursor: pointer;
+      }
+
    </style>
 
    <script>
@@ -181,6 +204,43 @@
          }
       }
 
+      function filter(){
+         let color = document.getElementById('ccolor').value;
+         let type = document.getElementById('ttype').value;
+         let clothes = document.getElementById('clothes');
+         
+         if(color=='Красный' && type =='Поло'){
+            clothes.src = 'RedPolo.jpeg';
+         }
+         if(color=='Белый' && type =='Поло'){
+            clothes.src = 'WhitePolo.jpeg';
+         }
+         if(color=='Чёрный' && type =='Поло'){
+            clothes.src = 'BlackPolo.jpeg';
+         }
+
+         if(color=='Красный' && type =='Футболка'){
+            clothes.src = 'RedT-shirt.jpeg';
+         }
+         if(color=='Белый' && type =='Футболка'){
+            clothes.src = 'WhiteT-shirt.jpeg';
+         }
+         if(color=='Чёрный' && type =='Футболка'){
+            clothes.src = 'BlackT-shirt.jpeg';
+         }
+
+         if(color=='Красный' && type =='Майка'){
+            clothes.src = 'RedShirt.jpeg';
+         }
+         if(color=='Белый' && type =='Майка'){
+            clothes.src = 'WhiteShirt.jpeg';
+         }
+         if(color=='Чёрный' && type =='Майка'){
+            clothes.src = 'BlackShirt.jpeg';
+         }
+      }
+
+
    </script>
 
 </head>
@@ -252,6 +312,26 @@
      <div class="expansion" onclick="expansionBlock(this)">
       Расширить блок
    </div>
+
+   <div class="filter">
+      Цвет одежды:
+      <select id="ccolor">
+         <option>Красный</option>
+         <option>Белый</option>
+         <option>Чёрный</option>
+      </select>
+
+      Тип одежды:
+      <select id="ttype">
+         <option>Футболка</option>
+         <option>Поло</option>
+         <option>Майка</option>
+      </select>
+
+      <button onclick="filter()">ОК</button><br>
+
+      <img id="clothes" style="width: 450px;">
+  </div>
 
    </main>
 
