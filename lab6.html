@@ -40,7 +40,18 @@
          user-select: none;
       }
       
-
+      .expansion {
+         position: absolute;
+         top: 320px;
+         border: 1px solid greenyellow;
+         width: 100px;
+         font-size: 13px;
+         margin-top: 20px;
+         padding: 10px;
+         border-radius: 10px;
+         cursor: pointer;
+         user-select: none; 
+      }
    </style>
 
    <script>
@@ -158,8 +169,17 @@
          }
         }
 
-
-
+      let wid=2;
+      function expansionBlock(div){
+         wid++;
+         if(wid<1000/50+1){
+            div.style.width=(50*wid) + 'px';
+         }
+         else{
+            div.style.width='100px'
+            wid=2
+         }
+      }
 
    </script>
 
@@ -228,6 +248,10 @@
       <div class="click" onclick="changeClick(this)">
          Кликни на меня
      </div>
+     
+     <div class="expansion" onclick="expansionBlock(this)">
+      Расширить блок
+   </div>
 
    </main>
 
