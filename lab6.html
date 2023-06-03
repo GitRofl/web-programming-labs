@@ -29,6 +29,16 @@
          user-select: none;
       }
       
+      .click {
+         border: 1px solid greenyellow;
+         width: 400px;
+         margin: auto;
+         margin-top: 20px;
+         padding: 10px;
+         border-radius: 10px;
+         cursor: pointer;
+         user-select: none;
+      }
       
 
    </style>
@@ -124,9 +134,29 @@
             document.getElementById('color-name').innerHTML='жёлтый';
          }
       }
-
-
-      
+  
+      let positionLeft = true;
+      function changeClick(div){
+         div.style.left = null;
+         div.style.right = null;
+         div.style.position = 'absolute';
+         if(positionLeft == true){
+            div.style.transition = '2s';
+            div.style.right = '20px';
+            div.style.transformation = 'rotate(0)';
+            positionLeft = false;
+            div.style.backgroundColor = 'white';
+            div.style.color = 'black';
+         }
+         else {
+            div.style.transition = '2s';
+            div.style.left ='20px';
+            div.style.transformation = 'rotate(4turn)';
+            positionLeft=true;
+            div.style.backgroundColor = 'black';
+            div.style.color = 'white';
+         }
+        }
 
 
 
@@ -194,6 +224,10 @@
             Цвет <span id="color-name">Жёлтый</span><br>
             Сделайте двойной клик для смены цвета
         </div>
+
+      <div class="click" onclick="changeClick(this)">
+         Кликни на меня
+     </div>
 
    </main>
 
