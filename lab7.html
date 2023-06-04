@@ -7,7 +7,7 @@
    <title>Artem Basman. Lab 7</title>
    <link rel="stylesheet" href="main.css">
    <style>
-    
+     
    </style>
 
    <script>
@@ -44,6 +44,53 @@
          document.getElementById('detail').innerHTML= 'Среднее значение:' + average;
       }
 
+      function addTransparentBlocks() {
+         let transBlocks = document.getElementById('transparent-blocks');
+
+         for (let i=0; i<10; i++) {
+            let transBlock = document.createElement('div');
+            transBlock.style.opacity = (i*10) + '%';
+            transBlock.innerHTML = 'Блок №' + (i+1);
+
+            transBlocks.appendChild(transBlock);
+         }
+      }
+
+      function RadGreen() {
+         let rgs = document.getElementById('circles');
+         let input = document.getElementById('switch');
+         let userNumber = parseInt(input.value);
+
+         for (let i=0; i<userNumber; i++) {
+            let rg = document.createElement('div');
+            rg.style.borderRadius = '50%';
+            rg.style.padding= '20px';
+            rg.style.width = '20px';
+            rg.innerHTML = userNumber-i;
+            rg.style.textAlign = 'center';
+            rg.style.color = 'white';
+            rgs.appendChild(rg);
+            if ((userNumber-i)%2==0) {
+               rg.style.background = 'aquamarine';
+            }
+            else {
+               rg.style.background = 'rgb(197, 85, 85)';
+            }
+         }
+      }
+
+      function calculator() {
+         let number= 84;
+         let table= document.getElementById('number');
+
+         for( let i=13; i<=33; i++) {
+            let tr= document.createElement('tr');
+            let td= document.createElement('td');
+            td.innerHTML= number+'*'+i+'='+(number*i);
+            tr.appendChild(td);
+            table.appendChild(tr);
+         }
+      }
 
 
    </script>
@@ -63,6 +110,16 @@
       <button onclick="showExchange()">Курс доллара</button>
       <table border="1" id="dollar-exchange"></table>
       <div id="detail"></div>
+
+      <button onclick="addTransparentBlocks()">Создать полупрозрачные блоки</button>
+      <div id="transparent-blocks"></div>
+
+      <input type="number" value="5" id="switch" placeholder="Введите число кругов">
+      <button onclick="RadGreen()">красное/зеленое</button>
+      <div id="circles"></div>
+
+      <button onclick="calculator()">Таблица умножения на 84</button>
+      <table border="1" id="number"></table>
 
    </Main>
 
