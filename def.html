@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Защита</title>
+    <style></style>
+
+    <script>
+        function calculate() {
+        let A = parseInt(document.getElementById("inputA").value);
+        let B = parseInt(document.getElementById("inputB").value);
+        let outputDiv = document.getElementById("output");
+
+        if (A !== B) {
+            A = A + B;
+            B = A;
+        } else {
+            A = 0;
+            B = 0;
+        }
+
+        outputDiv.innerHTML = "Новое значение переменной A: " + A + "<br>Новое значение переменной B: " + B;
+        }
+
+        function resolution() {
+        let A = parseInt(document.getElementById("inputA_2").value);
+        let B = parseInt(document.getElementById("inputB_2").value);
+        let sum = 0;
+
+        for (let i = A; i <= B; i++) {
+            sum += i;
+        }
+
+        document.getElementById("output_2").innerHTML = "Сумма всех чисел от " + A + " до " + B + " равна: " + sum;
+        }
+
+
+    </script>
+</head>
+<body>
+
+    <main>
+        <h1>ЛАБОРАТОРНАЯ РАБОТА 6</h1>
+        <div>
+            <h3>if 10</h3>
+            Значение A:
+            <input type="number" id="inputA"> <br>
+            Значение B:
+            <input type="number" id="inputB">
+            <button onclick="calculate()">Выполнить</button> <br>
+            <div id="output"></div>
+        </div>
+      
+        <h1>ЛАБОРАТОРНАЯ РАБОТА 7</h1>
+        <div>
+            <label for="inputA_2">Значение A:</label>
+            <input type="number" id="inputA_2">
+            <br>
+            <label for="inputB_2">Значение B:</label>
+            <input type="number" id="inputB_2">
+            <br>
+            <button onclick="resolution()">Выполнить</button>
+            <br>
+            <div id="output_2"></div>
+        </div>
+    
+    </main>
+
+</body>
+</html>
